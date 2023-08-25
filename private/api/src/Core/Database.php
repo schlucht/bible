@@ -1,11 +1,14 @@
 <?php 
+
+namespace Core;
+
+use PDO;
+
 include_once('config.php');
     
 class Database {
 
-    public $dsn;
-
-    
+    public $dsn;    
 
     public function getConnection():PDO {
         $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME;

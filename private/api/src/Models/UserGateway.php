@@ -1,5 +1,10 @@
 <?php
 
+namespace Models;
+
+use Core\Database;
+use PDO;
+
 class UserGateway {
     private PDO $conn;
 

@@ -1,7 +1,9 @@
 <?php
 
+namespace Core;
+
 class ErrorHandler {
-    public static function handleException(Throwable $exception): void {
+    public static function handleException($exception): void {
 
         http_response_code(500);
 
@@ -14,6 +16,6 @@ class ErrorHandler {
     }
 
     public static function handleError(int $errno, string $errstr, string $errfile, int $errline):bool {
-        throw new Error ($errstr, 0, $errno, $errfile, $errline);
+        throw new \ErrorException ($errstr, 0, $errno, $errfile, $errline);
     }
 }

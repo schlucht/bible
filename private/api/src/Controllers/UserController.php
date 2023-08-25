@@ -1,4 +1,7 @@
 <?php
+namespace Controllers;
+
+use Models\UserGateway;
 
 class UserController {
 
