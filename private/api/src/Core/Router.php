@@ -10,16 +10,18 @@ final class Router
     private const SEPARATOR = '::';
     public function register(string $url, callable $action, string $methods = 'GET|POST'): array
     {
+        
         $url = preg_replace('~{(.*)}~mU', '(?<$1>\S+)', $url);
         $url = sprintf('~^(%s)/?%s(%s)$~i',$url, self::SEPARATOR, $methods);
+        
         $this->routes[$url]= $action;
-
+       
         return $this->routes;
     }
-    public function handle(Request $request): mixed
+    
+    public function handle(Request $request): mixed    
     {
         $searchString = $request->getUri() . self::SEPARATOR .$request->getMethod();
-
         foreach($this->routes as $rexEx => $action){
             $matches = [];
             if(!preg_match($rexEx,$searchString,$matches)){
@@ -28,10 +30,11 @@ final class Router
             $matches = array_filter($matches,function ($key){
                 return is_int($key) === false;
             }, ARRAY_FILTER_USE_KEY);
-
+            
             $matches['request'] = $request;
-
-            return $action(...$matches);
+            
+            $a = $action(...$matches);
+            return $a;
         }
         $message = sprintf('Route %s not found',$request->getUri());
         http_response_code(404);

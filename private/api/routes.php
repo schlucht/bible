@@ -1,21 +1,25 @@
 <?php
-// require_once __DIR__ . '/IndexController.php';
+// require_once __DIR__ . '/src/Controllers/UserController.php';
 // require_once __DIR__ . '/ProfileController.php';
 
 use Core\Router;
 use Core\Request;
+use Controllers\UserController;
+//use Controllers\IndexController;
 
 $router = new Router();
+$user = new UserController();
 
+// $request = Request::createFromGlobal();
 
 // $router->register('/', new IndexController());
 
 // $router->register('/profile/{id}', new ProfileController(),'POST');
 // $router->register('/profile/{id}', new ProfileController(),'GET');
-
-$router->register('/', function (Request $request) {
-    return 'Login';
-}, 'GET');
+// call_user_func([$obj, "mymethod"]);
+$router->register('/', [$user, 'readUsers']);
+$router->register('/write', [$user, 'writeUser'],'POST');
+$router->register('/user/{id}', [$user, 'userFromId'],'POST');
 
 
 return $router;

@@ -5,7 +5,7 @@ namespace Models;
 use Core\Database;
 use PDO;
 
-class UserGateway {
+class User {
     private PDO $conn;
 
     public function __construct(Database $database) {

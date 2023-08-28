@@ -3,14 +3,16 @@
 namespace Core;
 
 final class Request
-{
+{   
+    public $body;
+
     public function __construct(
         private readonly string $uri,
         private readonly string $method,
         private readonly array  $queryParams
     )
     {
-
+        
     }
 
     public static function createFromGlobal(): self
@@ -28,6 +30,8 @@ final class Request
 
         $url = '/' . str_replace([$scriptName, $baseDir, '?' . $queryString], '', $requestUri);
         $url = str_replace('//', '/', $url);
+
+     
 
 
         return new Request($url, $requestMethod, $queryParams);
@@ -58,6 +62,14 @@ final class Request
             return filter_input(INPUT_POST, $name);
         }
         return $default;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBody(): string {
+        $data = file_get_contents("php://input");
+        return $data;
     }
 
 }
