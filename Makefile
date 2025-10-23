@@ -3,9 +3,13 @@ PORT=5101
 DSN=ots:fhxdb@/fhxdb?parseTime=true
 
 build:
-	@go build -o dist/${BINARY_NAME} ./main
+	@go build -o dist/${BINARY_NAME} ./app
 
 api: frontb build
+	@env ./dist/${BINARY_NAME} -port=${PORT} &
+	@echo "Backend running..."
+
+dev: build
 	@env ./dist/${BINARY_NAME} -port=${PORT} &
 	@echo "Backend running..."
 
@@ -15,7 +19,7 @@ stop:
 	@-pkill -f ${BINARY_NAME}
 	@echo "Backend stopped..."
 
-restart: stop api
+restart: stop dev
 	clear
 
 clean: stop
@@ -32,7 +36,7 @@ fronta:
 	cd frontend && npm start
 
 frontb:
-	cd frontent && npm run build
+	cd frontend && npm run build
 
 docker:
 	docker compose up -d
