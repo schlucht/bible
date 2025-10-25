@@ -1,31 +1,22 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { API } from './app.config';
-import { AppService } from './services/app.service';
+import { Header } from './components/header';
+import { Footer } from './components/footer';
 
 @Component({
   selector: 'ots-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [RouterOutlet, Header, Footer],
+  template: `
+    <div class="h-screen">
+      <ots-header></ots-header>
+      <main class="h-[70%]">
+          <h1>Hello </h1>
+          <router-outlet></router-outlet>
+      </main>   
+      <ots-footer></ots-footer>
+    </div>
+  `,  
 })
 export class App {
-  protected title = signal('frontend');
-  result = inject(AppService);
-  werte:string = '';
-
-  s =setTimeout(() => {
-    this.title.set('backend');
-    console.log(API);
-  }, 2000);
-  constructor() {
-    this.result.sayHello().subscribe({
-      next: (res) => {
-        this.werte = JSON.stringify(res);
-      },
-      error: (err) => {
-        console.log(err)
-      }
-    })
-  }  
+  
 }

@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+
+@layer components {
+    .input-text {
+        @apply block min-w-0 grow py-1.5 pr-3 pl-1 text-base border-solid border-gray-200 border-1 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6;
+    }
+}
