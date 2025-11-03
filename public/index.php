@@ -2,29 +2,21 @@
 
 declare(strict_types=1);
 
-use Ots\Bible\Database;
+use Ots\Bible\Controllers\UserController;
+use Ots\Bible\Middleware\AddJsonResponseHeader;
 use Slim\Factory\AppFactory;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
    
 require dirname(__DIR__) . '/public/vendor/autoload.php';
 
 $app = AppFactory::create();
 
-$app->get('/api/users', function (Request $request, Response $response){
+$app->addBodyParsingMiddleware();
+$error_middleware = $app->addErrorMiddleware(true, true, true);
+$error_handler = $error_middleware->getDefaultErrorHandler();
+$error_handler->forceContentType('application/json');
+$app->add(new AddJsonResponseHeader);
 
-    $database = new Database;
-    $pdo = $database->getConnection();
-    $stmt = $pdo->query("SELECT * FROM users");
-    
-    $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $body = json_encode($res);
-
-    $response->getBody()->write($body);
-    return $response->withHeader('Content-Type', 'application/json');
-
-});
+$app->get('/api/users', [UserController::class, 'allUsers']);
 
 $app->run();
 ?>
