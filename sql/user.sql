@@ -28,6 +28,49 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `email`, `password`, `c
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
+--------------------------------------------------------------------------
+-- User Login Table
+-------------------------------------------------------------------------
+
+CREATE TABLE `user-login` (
+  `loginId` int NOT NULL,
+  `user_id` int NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `user-login`
+--
+ALTER TABLE `user-login`
+  ADD PRIMARY KEY (`loginId`),
+  ADD KEY `user` (`user_id`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `user-login`
+--
+ALTER TABLE `user-login`
+  MODIFY `loginId` int NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints der exportierten Tabellen
+--
+
+--
+-- Constraints der Tabelle `user-login`
+--
+ALTER TABLE `user-login`
+  ADD CONSTRAINT `user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
 
 
 
