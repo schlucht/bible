@@ -1,0 +1,76 @@
+<?php
+
+declare(strict_types=1);
+
+use DI\Container;
+use Ots\Bible\Controllers\UserController;
+use Ots\Bible\Database;
+use Ots\Bible\Models\UserModel;
+use Ots\Bible\Repositories\UserRepository;
+use Ots\Bible\Middleware\AddJsonResponseHeader;
+use Slim\Factory\AppFactory;
+
+require dirname(__DIR__) . '/public/vendor/autoload.php';
+
+// Container erstellen und Klassen registrieren
+$container = new Container();
+
+$container->set(Database::class, function () {
+    return new Database();
+});
+
+$container->set(UserRepository::class, function ($c) {
+    return new UserRepository($c->get(Database::class));
+});
+
+$container->set(UserModel::class, function ($c) {
+    return new UserModel($c->get(UserRepository::class));
+});
+
+$container->set(UserController::class, function ($c) {
+    return new UserController($c->get(UserModel::class));
+});
+
+// Slim-App mit Container initialisieren
+AppFactory::setContainer($container);
+$app = AppFactory::create();
+
+// Middleware
+$app->addBodyParsingMiddleware();
+$errorMiddleware = $app->addErrorMiddleware(true, true, true);
+$errorMiddleware->getDefaultErrorHandler()->forceContentType('application/json');
+$app->add(new AddJsonResponseHeader());
+
+// Routen
+$app->get('/api/users', [UserController::class, 'allUsers']);
+
+// App starten
+$app->run();
+
+
+//================================================
+
+declare(strict_types=1);
+
+use Slim\Factory\AppFactory;
+use Ots\Bible\Middleware\AddJsonResponseHeader;
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+// Container laden
+$container = require dirname(__DIR__) . '/config/container.php';
+AppFactory::setContainer($container);
+$app = AppFactory::create();
+
+// Middleware
+$app->addBodyParsingMiddleware();
+$app->addErrorMiddleware(true, true, true)
+     ->getDefaultErrorHandler()
+     ->forceContentType('application/json');
+$app->add(new AddJsonResponseHeader());
+
+// Routen laden
+(require dirname(__DIR__) . '/config/routes.php')($app);
+
+// App starten
+$app->run();

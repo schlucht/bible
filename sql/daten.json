@@ -1,0 +1,55 @@
+[
+    {
+        "art": "AT",
+        "books":[
+            {
+                "name":"1. Mose",
+                "bookComments": [
+                    {"user": "Janina", "comment": "Dies ist das erste Buch im Alten Testament"},
+                    {"user": "Lothar", "comment": "Kommentar von Lothar"}
+                ],
+                "chapters": [
+                    {
+                        "chapter": 1,
+                        "chapterComments": [
+                            {"user":"Janina", "comment":"Hier der Kommentar zu dem Kapitel"}
+                        ],
+                        "verses": [
+                            {
+                                "vers": 1,
+                                "versComments": [
+                                {"user":"Janina", "comment":"Hier der Kommentar zu dem Kapitel"}
+                            ]
+                            }
+                        ]
+                    }
+                ]
+            },{
+            "name":"2. Mose",
+                "bookComments": [
+                    {"user": "Janina", "comment": "Dies ist das erste Buch im Alten Testament"},
+                    {"user": "Lothar", "comment": "Kommentar von Lothar"}
+                ],
+                "chapters": [
+                    {
+                        "chapter": 1,
+                        "chapterComments": [
+                            {"user":"Janina", "comment":"Hier der Kommentar zu dem Kapitel"}
+                        ],
+                        "verses": [
+                            {
+                                "vers": 1,
+                                "versComments": [
+                                {"user":"Janina", "comment":"Hier der Kommentar zu dem Kapitel"}
+                            ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "art": "NT"
+    }
+]

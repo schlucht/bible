@@ -12,12 +12,11 @@ use Ots\Bible\Repositories\UserRepository;
 
 class UserController
 {
-    private UserModel $model;
+    
 
-    public function __construct()
-    {
-        $repo = new UserRepository(new Database);
-        $this->model = new UserModel($repo);
+    public function __construct(private UserModel $model)
+    {        
+        
     }
 
     function allUsers(Request $request, Response $response): Response{

@@ -2,12 +2,18 @@
 
 declare(strict_types=1);
 
+use DI\ContainerBuilder;
 use Ots\Bible\Controllers\UserController;
 use Ots\Bible\Middleware\AddJsonResponseHeader;
 use Slim\Factory\AppFactory;
    
 require dirname(__DIR__) . '/public/vendor/autoload.php';
 
+// Container laden
+$builder = new ContainerBuilder();
+$builder->addDefinitions(dirname(__DIR__) . '/public/config/container.php');
+$container = $builder->build();
+AppFactory::setContainer($container);
 $app = AppFactory::create();
 
 $app->addBodyParsingMiddleware();
@@ -16,7 +22,7 @@ $error_handler = $error_middleware->getDefaultErrorHandler();
 $error_handler->forceContentType('application/json');
 $app->add(new AddJsonResponseHeader);
 
-$app->get('/api/users', [UserController::class, 'allUsers']);
+(require dirname(__DIR__) . '/public/config/routes.php')($app);
 
 $app->run();
 ?>
