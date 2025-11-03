@@ -1,0 +1,19 @@
+{
+    "name": "ots/bible",
+    "description": "Bibel App",
+    "require": {
+        "slim/slim": "^4.15",
+        "slim/psr7": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ots\\Bible\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "schmidlothar1",
+            "email": "schmidlothar1@gmail.com"
+        }
+    ]
+}
