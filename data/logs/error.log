@@ -44,3 +44,16 @@
 [Fri Feb 21 07:42:33.761002 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
 [Tue Feb 25 09:57:46.225902 2025] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.63 (Unix) configured -- resuming normal operations
 [Tue Feb 25 09:57:46.227187 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
+[Mon Nov 03 09:51:45.490439 2025] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.65 (Unix) configured -- resuming normal operations
+[Mon Nov 03 09:51:45.490586 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
+[Mon Nov 03 11:14:16.336190 2025] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.65 (Unix) configured -- resuming normal operations
+[Mon Nov 03 11:14:16.350556 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
+[Mon Nov 03 11:14:16.915165 2025] [authz_core:error] [pid 17:tid 73] [client 172.18.0.1:50848] AH01630: client denied by server configuration: /var/www/html/public/.htaccess, referer: https://idx.google.com/
+[Mon Nov 03 11:18:01.317320 2025] [authz_core:error] [pid 9:tid 52] [client 172.18.0.1:36778] AH01630: client denied by server configuration: /var/www/html/public/.htaccess
+[Mon Nov 03 11:19:18.531808 2025] [authz_core:error] [pid 8:tid 13] [client 172.18.0.1:55510] AH01630: client denied by server configuration: /var/www/html/public/.htaccess
+[Mon Nov 03 11:19:22.743136 2025] [authz_core:error] [pid 8:tid 14] [client 172.18.0.1:55510] AH01630: client denied by server configuration: /var/www/html/public/.htaccess
+[Mon Nov 03 11:19:59.575062 2025] [authz_core:error] [pid 9:tid 39] [client 172.18.0.1:43698] AH01630: client denied by server configuration: /var/www/html/public/.htaccess
+[Mon Nov 03 11:22:50.945462 2025] [authz_core:error] [pid 8:tid 11] [client 172.18.0.1:40252] AH01630: client denied by server configuration: /var/www/html/public/.htaccess
+[Mon Nov 03 11:30:28.426542 2025] [authz_core:error] [pid 17:tid 75] [client 172.18.0.1:33694] AH01630: client denied by server configuration: /var/www/html/public/.htaccess
+[Mon Nov 03 11:31:03.050074 2025] [authz_core:error] [pid 17:tid 79] [client 172.18.0.1:55678] AH01630: client denied by server configuration: /var/www/html/public/.htaccess
+[Mon Nov 03 11:31:54.788902 2025] [authz_core:error] [pid 17:tid 84] [client 172.18.0.1:59696] AH01630: client denied by server configuration: /var/www/html/public/.htaccess
