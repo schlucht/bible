@@ -1,11 +1,13 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserService } from './services/user-service';
 import { JsonPipe } from '@angular/common';
+import { Header } from './components/header';
+import { Footer } from './components/footer';
 
 @Component({
   selector: 'ots-root',
-  imports: [RouterOutlet, JsonPipe],
+  imports: [RouterOutlet, JsonPipe, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

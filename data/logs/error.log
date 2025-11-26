@@ -60,3 +60,11 @@
 [Mon Nov 03 19:54:26.960891 2025] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.65 (Unix) configured -- resuming normal operations
 [Mon Nov 03 19:54:26.965969 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
 [Mon Nov 03 20:07:04.609157 2025] [mpm_event:notice] [pid 1:tid 1] AH00492: caught SIGWINCH, shutting down gracefully
+[Mon Nov 24 09:49:05.106054 2025] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.65 (Unix) configured -- resuming normal operations
+[Mon Nov 24 09:49:05.106181 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
+[Mon Nov 24 09:49:05.558646 2025] [proxy:error] [pid 9:tid 78] (111)Connection refused: AH00957: FCGI: attempt to connect to 172.18.0.4:9000 (php:9000) failed
+[Mon Nov 24 09:49:05.558702 2025] [proxy_fcgi:error] [pid 9:tid 78] [client 172.18.0.1:34368] AH01079: failed to make connection to backend: php, referer: https://idx.google.com/
+[Tue Nov 25 13:04:47.254790 2025] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.65 (Unix) configured -- resuming normal operations
+[Tue Nov 25 13:04:47.256519 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
+[Wed Nov 26 09:25:11.143523 2025] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.65 (Unix) configured -- resuming normal operations
+[Wed Nov 26 09:25:11.146683 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'

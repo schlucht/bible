@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace Ots\Bible\Repositories;
 
 use Ots\Bible\Database;
-use Ots\Bible\Repositories;
-use PDO;
-use PDOException;
 
 class UserRepository extends Repository
 {

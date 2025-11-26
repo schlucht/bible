@@ -1,52 +1,19 @@
-CREATE TABLE testamente (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    art VARCHAR(10) NOT NULL -- z.B. 'AT' oder 'NT'
-);
+-- Listet die Text der Verse auf
+SELECT text, t.name, c.number, v.id, v.number, b.name, b.abbreviation FROM `verse-text` 
+INNER JOIN translation AS t ON translation_id = t.id
+INNER JOIN verse AS v ON `verse-text`.`verse_id` = v.id
+INNER JOIN chapter AS c ON v.chapter_id = c.id
+INNER JOIN book AS b ON c.book_id = b.id
+WHERE b.id = 4 AND c.id = 4 AND v.id = 3 AND t.id = 2
+;
 
-CREATE TABLE buecher (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    testament_id INT NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    FOREIGN KEY (testament_id) REFERENCES testamente(id)
-);
+-- Listet die Verse eines Kapitels auf
+SELECT text, t.name, c.number, v.number, b.name, b.abbreviation FROM `verse-text` 
+INNER JOIN translation AS t ON translation_id = t.id
+INNER JOIN verse AS v ON `verse-text`.`verse_id` = v.id
+INNER JOIN chapter AS c ON v.chapter_id = c.id
+INNER JOIN book AS b ON c.book_id = b.id
+WHERE b.id = 4 AND c.id = 4 AND t.id = 1
+ORDER BY v.number
+;
 
-CREATE TABLE kapitel (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    buch_id INT NOT NULL,
-    kapitel_nr INT NOT NULL,
-    FOREIGN KEY (buch_id) REFERENCES buecher(id)
-);
-
-CREATE TABLE verse (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    kapitel_id INT NOT NULL,
-    vers_nr INT NOT NULL,
-    FOREIGN KEY (kapitel_id) REFERENCES kapitel(id)
-);
-
-CREATE TABLE buch_kommentare (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    buch_id INT NOT NULL,
-    user_id INT NOT NULL,
-    kommentar TEXT,
-    FOREIGN KEY (buch_id) REFERENCES buecher(id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
-);
-
-CREATE TABLE kapitel_kommentare (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    kapitel_id INT NOT NULL,
-    user_id INT NOT NULL,
-    kommentar TEXT,
-    FOREIGN KEY (kapitel_id) REFERENCES kapitel(id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
-);
-
-CREATE TABLE vers_kommentare (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    vers_id INT NOT NULL,
-    user_id INT NOT NULL,
-    kommentar TEXT,
-    FOREIGN KEY (vers_id) REFERENCES verse(id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
-);
