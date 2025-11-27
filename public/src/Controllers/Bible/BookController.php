@@ -12,12 +12,7 @@ use Ots\Bible\Repositories\Bible\BookRepository;
 
 class BookController
 {
-    
-
-    public function __construct(private BookRepository $repo)
-    {        
-        
-    }
+    public function __construct(private BookRepository $repo){}
 
     function allBooks(Request $request, Response $response): Response{
         $res = $this->repo->getAllBooks();
