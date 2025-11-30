@@ -1,11 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterModules } from '../../core/constant/ModuleImports';
 
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'ots-header',
-  imports: [RouterOutlet, JsonPipe, RouterLink],
+  imports: [RouterModules],
   templateUrl: './header.html'
 })
 export class Header {

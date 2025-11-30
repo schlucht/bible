@@ -1,0 +1,16 @@
+.bible-page {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 25rem auto ;
+}
+
+.bible-sidebar {
+    grid-column: 1 / 1 ;
+    background-color: var(--clr-primary-1);
+    height: 100%;
+}
+
+.bible-main {
+    padding: 2rem;
+    grid-column: 2 / 2;
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BibleVers } from '../../components/bible-vers/bible-vers';
-import { BibleTitle } from '../../components/bible-title/bible-title';
+import { BibleVers } from '../../../shared/reusables/bible-vers/bible-vers';
+import { BibleTitle } from '../../../shared/reusables/bible-title/bible-title';
 
 const vers = 
     {
