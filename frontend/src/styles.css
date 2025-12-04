@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "styles/layouts.css";
-@import "styles/header.css";
+
 :root {
     --clr-background: rgb(247, 243, 249);
     --clr-primary-1: rgb(67, 7, 102);
@@ -20,34 +20,16 @@
 
   /* Font Style */
     --font-style-normal: normal;   
-
 }
 
-*, *::before, *::after {
+*{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-html {
-    font-size: 62.5%;    
-}
-
 body {
-    font-size: 1.6rem;
-    font-family: var(--font-family-anton);
-    font-style: var(--font-style-normal);    
+    font-family: var(--font-family-poppins);
     height: 100vh;
-    min-width: 340px;
 }
 
-h1 {
-    font-family: var(--font-family-poppins);
-    font-weight: 600;
-    font-size: 2.8rem;
-}
-h2 {
-    font-family: var(--font-family-poppins);
-    font-weight: 300;
-    font-size: 2.8rem;
-}

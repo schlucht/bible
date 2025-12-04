@@ -1,21 +1,26 @@
 <header class="header">
-    <div class="logo">
-        <img src="/img/jago-logo-light.svg" alt="Logo" />
-        <h1 class="logo-text">
-            JaGoLo - Bibel<br>
-            <span class="logo-subtext">Bibelstudium Jagolo</span>
-        </h1>
+    <div class="header__logo">
+      <a href="/" class="header__brand">
+        <img src="img/jago-logo-light.svg" alt="Logo" />
+        <h2>JaGoLo</h2>
+      </a>
     </div>
-    <div class="nav">
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="nav-left">
-            <a routerLink="/">Home</a>
-            <a routerLink="/bible">Bibel</a>
-            <a routerLink="/admin">Admin</a>
-        </nav>
-    </div>
-</header>
+    <nav class="header__nav">
+      <ul>
+        <li><a 
+            routerLinkActive="active" 
+            [routerLinkActiveOptions]="{exact: true}" 
+            routerLink="" 
+            class="header__link">Home</a></li>
+        <li><a 
+            routerLinkActive="active" 
+            [routerLinkActiveOptions]="{exact: true}" 
+            routerLink="bible" 
+            class="header__link">Bible</a></li>
+        <li><a routerLinkActive="active" 
+            [routerLinkActiveOptions]="{exact: true}" 
+            routerLink="about" 
+            class="header__link">About</a></li>
+      </ul>
+    </nav>
+  </header>

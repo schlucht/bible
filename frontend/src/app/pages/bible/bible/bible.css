@@ -1,16 +1,11 @@
-.bible-page {
-    height: 100%;
+.bible-page{    
+    min-height: 100%;
     display: grid;
-    grid-template-columns: 25rem auto ;
+    grid-template-columns: 2rem 1fr;
 }
-
-.bible-sidebar {
-    grid-column: 1 / 1 ;
-    background-color: var(--clr-primary-1);
-    height: 100%;
+.bible-sidebar{
+    background-color: bisque;
 }
-
-.bible-main {
-    padding: 2rem;
-    grid-column: 2 / 2;
+.bible-content{
+    background-color: cornsilk;
 }

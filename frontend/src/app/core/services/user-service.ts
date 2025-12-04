@@ -9,7 +9,7 @@ export class UserService {
   path = 'https://8888-firebase-bible-1762163003792.cluster-64pjnskmlbaxowh5lzq6i7v4ra.cloudworkstations.dev/api/users';
 
   allUsers() {
-    return this.httpClient.get(this.path);
+    // return this.httpClient.get(this.path);
   }
 
 

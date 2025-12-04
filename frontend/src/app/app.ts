@@ -12,11 +12,8 @@ import { Footer } from './shared/reusables/footer';
   styleUrl: './app.css'
 })
 export class App {
-  userService = inject(UserService);
-  res = "";
+   
   constructor() {
-    this.userService.allUsers().subscribe((res) => {
-      this.res = JSON.stringify(res);
-    });
+   
   }
 }

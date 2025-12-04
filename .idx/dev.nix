@@ -8,6 +8,7 @@
     pkgs.php
     pkgs.docker
     pkgs.php83Packages.composer
+    pkgs.zip
     
   ];
   # Sets environment variables in the workspace
