@@ -1,11 +1,9 @@
-<nav class="sidebar">
-    <h2 class="sidebar-title">Sidebar</h2>
+<nav class="sidebar">    
     <ul class="sidebar-items">
-        <li class="sidebar-item">
-            <a class="sidebar-link" aria-current="page" routerLink="book">Book</a>
-        </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link" aria-current="page" routerLink="book">Book</a>
-        </li>        
+        @for (item of menus; track item.name) {
+            <li class="sidebar-item">
+                <a class="sidebar-link" [routerLink]="item.link">{{ item.name }}</a>
+            </li>      
+        }          
     </ul>
 </nav>

@@ -1,6 +1,16 @@
 
 <div class="bible-page">
-    <div class="bible-sidebar">
+    <div class="sidebar-title">
+        <h2>
+            Sidebar
+        </h2>
+        <button (click) = openSidebar()>
+            <ots-hamburger></ots-hamburger>
+        </button>
+    </div>     
+    <div class="bible-sidebar"
+        [ngClass]="{'open': open()}"
+    >   
         <ots-sidebar></ots-sidebar>
     </div>
     <div class="bible-content">

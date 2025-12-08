@@ -7,7 +7,13 @@
       "type": "chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
+      "url": "https://4200-firebase-bible-1762163003792.cluster-64pjnskmlbaxowh5lzq6i7v4ra.cloudworkstations.dev/"
+    },
+    {
+      "name": "ng serve dev",
+      "type": "chrome",
+      "request": "launch",      
+      "url": "https://4200-firebase-bible-1762163003792.cluster-64pjnskmlbaxowh5lzq6i7v4ra.cloudworkstations.dev/"
     },
     {
       "name": "ng test",
