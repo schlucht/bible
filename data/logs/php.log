@@ -1,0 +1,285 @@
+[08-Dec-2025 11:08:45 UTC] Slim Application Error
+Type: TypeError
+Code: 0
+Message: Cannot assign string to property Ots\Bible\Models\Weather\WeatherModel::$day of type DateTime
+File: /var/www/html/public/src/Repositories/Weather/WeatherRepository.php
+Line: 34
+Trace: #0 /var/www/html/public/src/Controllers/Weather/WeatherController.php(17): Ots\Bible\Repositories\Weather\weatherRepository->getWeathers()
+#1 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->allWeathers(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#11 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#12 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#14 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/index.php(27): Slim\App->run()
+#17 {main}
+[08-Dec-2025 11:08:48 UTC] 404 Not Found
+Type: Slim\Exception\HttpNotFoundException
+Code: 404
+Message: Not found.
+File: /var/www/html/public/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php
+Line: 76
+Trace: #0 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(62): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#3 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#5 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#7 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/index.php(27): Slim\App->run()
+#11 {main}
+[08-Dec-2025 13:25:03 UTC] Slim Application Error
+Type: TypeError
+Code: 0
+Message: DateTime::__construct(): Argument #1 ($datetime) must be of type string, null given
+File: /var/www/html/public/src/Controllers/Weather/WeatherController.php
+Line: 27
+Trace: #0 /var/www/html/public/src/Controllers/Weather/WeatherController.php(27): DateTime->__construct(NULL)
+#1 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#11 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#12 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#14 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/index.php(27): Slim\App->run()
+#17 {main}
+[08-Dec-2025 13:25:32 UTC] Slim Application Error
+Type: TypeError
+Code: 0
+Message: DateTime::__construct(): Argument #1 ($datetime) must be of type string, null given
+File: /var/www/html/public/src/Controllers/Weather/WeatherController.php
+Line: 27
+Trace: #0 /var/www/html/public/src/Controllers/Weather/WeatherController.php(27): DateTime->__construct(NULL)
+#1 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#11 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#12 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#14 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/index.php(27): Slim\App->run()
+#17 {main}
+[08-Dec-2025 13:28:51 UTC] Slim Application Error
+Type: TypeError
+Code: 0
+Message: DateTime::__construct(): Argument #1 ($datetime) must be of type string, null given
+File: /var/www/html/public/src/Controllers/Weather/WeatherController.php
+Line: 27
+Trace: #0 /var/www/html/public/src/Controllers/Weather/WeatherController.php(27): DateTime->__construct(NULL)
+#1 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#11 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#12 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#14 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/index.php(27): Slim\App->run()
+#17 {main}
+[08-Dec-2025 13:29:22 UTC] Slim Application Error
+Type: TypeError
+Code: 0
+Message: DateTime::__construct(): Argument #1 ($datetime) must be of type string, null given
+File: /var/www/html/public/src/Controllers/Weather/WeatherController.php
+Line: 27
+Trace: #0 /var/www/html/public/src/Controllers/Weather/WeatherController.php(27): DateTime->__construct(NULL)
+#1 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#11 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#12 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#14 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/index.php(27): Slim\App->run()
+#17 {main}
+[08-Dec-2025 15:23:33 UTC] Slim Application Error
+Type: TypeError
+Code: 0
+Message: DateTime::__construct(): Argument #1 ($datetime) must be of type string, null given
+File: /var/www/html/public/src/Controllers/Weather/WeatherController.php
+Line: 27
+Trace: #0 /var/www/html/public/src/Controllers/Weather/WeatherController.php(27): DateTime->__construct(NULL)
+#1 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#11 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#12 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#14 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/index.php(27): Slim\App->run()
+#17 {main}
+[08-Dec-2025 15:25:04 UTC] Slim Application Error
+Type: TypeError
+Code: 0
+Message: DateTime::__construct(): Argument #1 ($datetime) must be of type string, null given
+File: /var/www/html/public/src/Controllers/Weather/WeatherController.php
+Line: 27
+Trace: #0 /var/www/html/public/src/Controllers/Weather/WeatherController.php(27): DateTime->__construct(NULL)
+#1 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#11 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#12 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#14 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/index.php(27): Slim\App->run()
+#17 {main}
+[08-Dec-2025 15:25:39 UTC] Slim Application Error
+Type: TypeError
+Code: 0
+Message: DateTime::__construct(): Argument #1 ($datetime) must be of type string, null given
+File: /var/www/html/public/src/Controllers/Weather/WeatherController.php
+Line: 28
+Trace: #0 /var/www/html/public/src/Controllers/Weather/WeatherController.php(28): DateTime->__construct(NULL)
+#1 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#11 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#12 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#14 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/index.php(27): Slim\App->run()
+#17 {main}
+[08-Dec-2025 15:26:00 UTC] Slim Application Error
+Type: Error
+Code: 0
+Message: Object of class DateTime could not be converted to string
+File: /var/www/html/public/src/Repositories/Weather/WeatherRepository.php
+Line: 49
+Trace: #0 /var/www/html/public/src/Repositories/Weather/WeatherRepository.php(49): PDOStatement->bindValue(':day', Object(DateTime))
+#1 /var/www/html/public/src/Controllers/Weather/WeatherController.php(30): Ots\Bible\Repositories\Weather\weatherRepository->SetWeather(Object(Ots\Bible\Models\Weather\WeatherModel))
+#2 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#9 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#10 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#11 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#12 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#14 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#17 /var/www/html/public/index.php(27): Slim\App->run()
+#18 {main}
+[08-Dec-2025 15:26:35 UTC] Slim Application Error
+Type: Error
+Code: 0
+Message: Object of class DateTime could not be converted to string
+File: /var/www/html/public/src/Repositories/Weather/WeatherRepository.php
+Line: 49
+Trace: #0 /var/www/html/public/src/Repositories/Weather/WeatherRepository.php(49): PDOStatement->bindValue(':day', Object(DateTime))
+#1 /var/www/html/public/src/Controllers/Weather/WeatherController.php(30): Ots\Bible\Repositories\Weather\weatherRepository->SetWeather(Object(Ots\Bible\Models\Weather\WeatherModel))
+#2 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#9 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#10 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#11 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#12 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#14 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#17 /var/www/html/public/index.php(27): Slim\App->run()
+#18 {main}
+[08-Dec-2025 15:36:07 UTC] Slim Application Error
+Type: Error
+Code: 0
+Message: Object of class DateTime could not be converted to string
+File: /var/www/html/public/src/Repositories/Weather/WeatherRepository.php
+Line: 49
+Trace: #0 /var/www/html/public/src/Repositories/Weather/WeatherRepository.php(49): PDOStatement->bindValue(':day', Object(DateTime))
+#1 /var/www/html/public/src/Controllers/Weather/WeatherController.php(30): Ots\Bible\Repositories\Weather\weatherRepository->SetWeather(Object(Ots\Bible\Models\Weather\WeatherModel))
+#2 /var/www/html/public/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(39): Ots\Bible\Controllers\Weather\WeatherController->addWeather(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(362): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#4 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#5 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /var/www/html/public/vendor/slim/slim/Slim/Routing/Route.php(321): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#7 /var/www/html/public/vendor/slim/slim/Slim/Routing/RouteRunner.php(74): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#8 /var/www/html/public/vendor/slim/slim/Slim/Middleware/BodyParsingMiddleware.php(64): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#9 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\BodyParsingMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#10 /var/www/html/public/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(77): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#11 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(129): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#12 /var/www/html/public/src/Middleware/AddJsonResponseHeader.php(15): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#13 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(283): Ots\Bible\Middleware\AddJsonResponseHeader->__invoke(Object(Slim\Psr7\Request), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#14 /var/www/html/public/vendor/slim/slim/Slim/MiddlewareDispatcher.php(73): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Slim\Psr7\Request))
+#15 /var/www/html/public/vendor/slim/slim/Slim/App.php(209): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#16 /var/www/html/public/vendor/slim/slim/Slim/App.php(193): Slim\App->handle(Object(Slim\Psr7\Request))
+#17 /var/www/html/public/index.php(27): Slim\App->run()
+#18 {main}
