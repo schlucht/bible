@@ -16,7 +16,7 @@ class WeatherController
 {
     public function __construct(private WeatherRepository $repo) {}
 
-    function allWeathers(Request $request, Response $response): Response    {
+    function index(Request $request, Response $response): Response    {
         $resp = new ResponseHelper($response);            
         try {
             $res = $this->repo->getWeathers();
@@ -28,7 +28,7 @@ class WeatherController
         }
     }
 
-    function addWeather(Request $request, Response $response, array $args): Response
+    function store(Request $request, Response $response, array $args): Response
     {
         $resp = new ResponseHelper($response);  
         try {
@@ -40,6 +40,22 @@ class WeatherController
             $id = $this->repo->SetWeather($weather);
             $response->getBody()->write(json_encode(['id' => $id]));
             return $resp->write(new ResponseMessage(true, ['id' => $id], null), 201);            
+        } catch (\Exception $e) {
+            return $resp->write(new ResponseMessage(false, null, $e->getMessage()), 500);    
+        }
+    }
+
+    function show(Request $request, Response $response, array $args): Response    {
+        $resp = new ResponseHelper($response);            
+        try {
+            $id = isset($args['id']) ? (int)$args['id'] : 0;
+            $weather = $this->repo->findById($id);
+            if ($weather) {
+                $body = json_encode($weather);
+                return $resp->write(new ResponseMessage(true, $body, null), 200);            
+            } else {
+                return $resp->write(new ResponseMessage(false, null, 'User not found'), 404);            
+            }
         } catch (\Exception $e) {
             return $resp->write(new ResponseMessage(false, null, $e->getMessage()), 500);    
         }

@@ -11,7 +11,7 @@ class WeatherModel
 {
     public int $id;
     public int $temperature;
-    public DateTime $day;
+    public ?DateTime $day;
     public string $description;
-    public DateTime $insertAt;    
+    public ?DateTime $insertAt;    
 }

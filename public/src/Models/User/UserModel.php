@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ots\Bible\Models;
+namespace Ots\Bible\Models\User;
 
 use DateTime;
 use Ots\Bible\Repositories\UserRepository;
@@ -15,14 +15,6 @@ class UserModel
     public string $email;
     public string $password;
     public DateTime $updated;
-    public DateTime $created;
-
-    public function __construct(private UserRepository $repo) {
-
-    }
-
-    public function allUsers(): array {
-        return $this->repo->getAll();    
-    }
+    public DateTime $created; 
 
 }

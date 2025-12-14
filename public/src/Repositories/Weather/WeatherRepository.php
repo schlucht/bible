@@ -60,4 +60,32 @@ class weatherRepository extends Repository
             throw $e;
         }
     }
+
+    public function  findById(int $id): ?WeatherModel
+    {
+        try{
+            
+            $this->pdo = $this->database->getConnection();
+            $sql = "SELECT id, temperature, `day`, `description`, insert_at FROM $this->table WHERE id = :id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindValue(':id', $id);
+            $stmt->execute();
+            $res = $stmt->fetch(PDO::FETCH_ASSOC);
+            var_dump($res);
+            if ($res) {
+                $weather = new WeatherModel();
+                $weather->id = (int)$res['id'];
+                $weather->temperature = (int)$res['temperature'];
+                $weather->day = $res['day'];
+                $weather->description = $t['description'] ?? '';
+                $weather->insertAt = $res['insert_at'];
+                return $weather;
+            }           
+        
+            return null;
+
+        } catch(\PDOException $e){
+            throw $e;
+        }
+    }
 }

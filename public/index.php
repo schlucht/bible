@@ -6,6 +6,7 @@ use DI\ContainerBuilder;
 use Ots\Bible\Controllers\UserController;
 use Ots\Bible\Middleware\AddJsonResponseHeader;
 use Slim\Factory\AppFactory;
+use \Ots\Bible\Middleware\CorsMiddleware;
    
 require dirname(__DIR__) . '/public/vendor/autoload.php';
 
@@ -16,6 +17,7 @@ $container = $builder->build();
 AppFactory::setContainer($container);
 $app = AppFactory::create();
 
+$app->add(new CorsMiddleware());
 $app->addBodyParsingMiddleware();
 $error_middleware = $app->addErrorMiddleware(true, true, true);
 $error_handler = $error_middleware->getDefaultErrorHandler();
