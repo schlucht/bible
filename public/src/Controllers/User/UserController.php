@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Ots\Bible\Controllers\User;
 
-use Ots\Bible\Database;
+
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use Ots\Bible\Models\User\UserModel;
 use Ots\Bible\Repositories\User\UserRepository;
 use Ots\Bible\Utils\ResponseHelper;
 use Ots\Bible\Utils\ResponseMessage;

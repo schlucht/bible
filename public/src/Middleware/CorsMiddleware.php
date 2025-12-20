@@ -17,6 +17,8 @@ class CorsMiddleware
             'http://localhost:4200',
             'http://127.0.0.1:4200',
             'https://jagolo.ch',
+            'https://schmidschlucht.ch',
+            'https://4200-firebase-schlucht-1765795472802.cluster-64pjnskmlbaxowh5lzq6i7v4ra.cloudworkstations.dev/',
         ]; // anpassen
         $allowOrigin = in_array($origin, $allowedOrigins, true) ? $origin : '*';
 
